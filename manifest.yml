@@ -1,0 +1,6 @@
+applications:
+- name: service-github-rabo
+  instances: 1
+  memory: 660m
+  path: target/service-github-rabo-0.0.1-SNAPSHOT.jar
+  
