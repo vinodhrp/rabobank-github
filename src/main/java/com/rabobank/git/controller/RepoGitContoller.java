@@ -58,7 +58,7 @@ public class RepoGitContoller {
 	@RequestMapping(value = "/pulls/{username}/{reponame}", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> pullRequestForRepo(@PathVariable("username") String username,@PathVariable("reponame") String reponame) {
 		logger.info("Given UserName/RepoName  : "+ username+"/"+reponame);
-		List<PullReqResponse> reposResponses = gitService.pullRequestDetailsForRepo(username, reponame);
+		List<PullReqResponse> reposResponses = gitService.pullRequestDetails(username, reponame);
 		if(reposResponses.isEmpty()) {
 			logger.error("No Pull Requests Found for  : " + username+"/"+reponame);
 			ErrorMessage apiCustomMessage = new ErrorMessage(HttpStatus.NOT_FOUND,

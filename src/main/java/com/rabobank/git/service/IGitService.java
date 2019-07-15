@@ -22,6 +22,6 @@ public interface IGitService {
 	
 	
 	@GetMapping("/repos/{username}/{reponame}/pulls")
-	public List<PullReqResponse> pullRequestDetailsForRepo(@PathVariable("username") String username,@PathVariable("reponame") String reponame);
+	public List<PullReqResponse> pullRequestDetails(@PathVariable("username") String username,@PathVariable("reponame") String reponame);
 
 }
