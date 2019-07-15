@@ -2,5 +2,5 @@ applications:
 - name: rabobank-github-io
   instances: 1
   memory: 660m
-  path: target/service-github-rabobank-0.0.1-SNAPSHOT.jar
+  path: target/rabobank-github-0.0.1-SNAPSHOT.jar
   
