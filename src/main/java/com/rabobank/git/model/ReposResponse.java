@@ -8,7 +8,11 @@ import com.rabobank.git.constant.APIConstant;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * 
+ * @author vinodhr
+ *
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "id", "name", "full_name", "description", "url" })
 @Getter

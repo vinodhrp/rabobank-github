@@ -8,12 +8,16 @@ import com.rabobank.git.constant.APIConstant;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * 
+ * @author vinodhr
+ *
+ */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({ "id", "number", "state", "title", "body" })
 @Getter
 @Setter
-public class PRResponse {
+public class PullReqResponse {
 
 	
 	@ApiModelProperty(notes = APIConstant.PULL_ID)
@@ -32,8 +36,8 @@ public class PRResponse {
 	@JsonProperty("title")
 	private String title;
 
-	@ApiModelProperty(notes = APIConstant.PULL_BODY)
-	@JsonProperty("body")
-	private String desc;
+	//@ApiModelProperty(notes = APIConstant.PULL_BODY)
+	//@JsonProperty("body")
+	//private String desc;
 	
 }

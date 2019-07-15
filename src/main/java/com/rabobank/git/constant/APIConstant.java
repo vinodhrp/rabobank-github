@@ -14,13 +14,13 @@ public class APIConstant {
 	public static final String VERSION = "v0.0.1";
 	public static final String USR_GIT = "https://github.com/vinodhrp";
 	public static final String USR_EMAIL = "vinodh.rp@gmail.com";
-	public static final String LICENSE = "License No. #######";
-	public static final String LICENSE_URL = "www.rebo-git.com";
+	public static final String LICENSE = "License #001";
+	public static final String LICENSE_URL = "www.rebobank-gitapi.com";
 	public static final String TERMS_URL = "";
 
-	public static final String REPOS_DETAIL_DESC = "Display all Repos for the given user.";
+	public static final String REPOS_DETAIL_DESC = "Display all Repos of Logged-in Git user.";
 	public static final String REPO_CNTRLR_DESC = "RepoGitContoller to fetch details of Git Repos for the given Git user";
-	public static final String PULL_DETAIL_DESC = "Provides info of Pull Prequest for all Repos of Logged-in Git user.";
+	public static final String PULL_DETAIL_DESC = "Provides info of Pull Prequest for given Repo of Logged-in Git user.";
 
 	public static final String API_GET = "GET";
 

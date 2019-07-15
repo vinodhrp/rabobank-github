@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.rabobank.git.constant.APIConstant;
 import com.rabobank.git.constant.MappingConstant;
-import com.rabobank.git.model.PRResponse;
+import com.rabobank.git.model.PullReqResponse;
 import com.rabobank.git.model.ReposResponse;
-import com.rabobank.git.service.IGitClient;
+import com.rabobank.git.service.IGitService;
 import com.rabobank.git.util.ErrorMessage;
 
 import io.swagger.annotations.Api;
@@ -37,13 +37,13 @@ public class RepoGitContoller {
 	public Logger logger = LoggerFactory.getLogger(RepoGitContoller.class);
 
 	@Autowired
-	private IGitClient gitClient;
+	private IGitService gitService;
 
 	@ApiOperation(value = APIConstant.REPOS_DETAIL_DESC, httpMethod = APIConstant.API_GET,response = ReposResponse.class)
 	@RequestMapping(value = "/{username}", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> listAllRepos(@PathVariable("username") String username) {
 		logger.info("Given UserName  : "+username);
-		List<ReposResponse> reposResponses = gitClient.fetchAllPublicRepos(username);
+		List<ReposResponse> reposResponses = gitService.fetchAllPublicRepos(username);
 		if(reposResponses.isEmpty()) {
 			logger.error("No Repos Found for the given User.  : ", username);
 			ErrorMessage apiCustomMessage = new ErrorMessage(HttpStatus.NOT_FOUND,
@@ -54,19 +54,18 @@ public class RepoGitContoller {
 	}
 	
 	
-	@ApiOperation(value = APIConstant.PULL_DETAIL_DESC, httpMethod = APIConstant.API_GET,response = PRResponse.class)
+	@ApiOperation(value = APIConstant.PULL_DETAIL_DESC, httpMethod = APIConstant.API_GET,response = PullReqResponse.class)
 	@RequestMapping(value = "/pulls/{username}/{reponame}", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> pullRequestForRepo(@PathVariable("username") String username,@PathVariable("reponame") String reponame) {
-		//logger.info("Given UserName/RepoName  : ", username, "/", reponame);
 		logger.info("Given UserName/RepoName  : "+ username+"/"+reponame);
-		List<PRResponse> reposResponses = gitClient.pullRequestDetailsForRepo(username, reponame);
+		List<PullReqResponse> reposResponses = gitService.pullRequestDetailsForRepo(username, reponame);
 		if(reposResponses.isEmpty()) {
 			logger.error("No Pull Requests Found for  : " + username+"/"+reponame);
 			ErrorMessage apiCustomMessage = new ErrorMessage(HttpStatus.NOT_FOUND,
 					"No Pull Requests Found for : " + username +"/" +reponame);
 			return new ResponseEntity<ErrorMessage>(apiCustomMessage, HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<List<PRResponse>>(reposResponses, HttpStatus.OK);
+		return new ResponseEntity<List<PullReqResponse>>(reposResponses, HttpStatus.OK);
 	}
 
 }
