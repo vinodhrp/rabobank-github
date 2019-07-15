@@ -6,7 +6,7 @@ package com.rabobank.git.constant;
  *
  */
 public class APIConstant {
-	
+
 	public static final String BASE_PACK = "com.rabobank.git";
 	public static final String USR_NAME = "Vinodh Ramamoorthy";
 	public static final String API_TITLE = "Rabobank - Git API's Invoker";
@@ -17,10 +17,26 @@ public class APIConstant {
 	public static final String LICENSE = "License No. #######";
 	public static final String LICENSE_URL = "www.rebo-git.com";
 	public static final String TERMS_URL = "";
-	
-	public static final String CNTRLLR_GET_REPOS_DESC = "Display all Repos for the given user.";
-	public static final String REPO_CNTRLR_DESC = "RepoGitContoller to fetch details of Git Repos for the given GIT user";
-	
+
+	public static final String REPOS_DETAIL_DESC = "Display all Repos for the given user.";
+	public static final String REPO_CNTRLR_DESC = "RepoGitContoller to fetch details of Git Repos for the given Git user";
+	public static final String PULL_DETAIL_DESC = "Provides info of Pull Prequest for all Repos of Logged-in Git user.";
 
 	public static final String API_GET = "GET";
+
+	// Model
+	public static final String REPO_ID = "Repository ID";
+	public static final String REPO_NAME = "Repository Name";
+	public static final String REPO_PATH = "Repository Path";
+	public static final String REPO_DESC = "Repository Description";
+	public static final String REPO_URL = "Repository URL";
+	
+	
+	public static final String PULL_ID = "Pull Request ID";
+	public static final String PULL_NUMBER = "Pull Request Number";
+	public static final String PULL_STATUS = "Pull Request Status";
+	public static final String PULL_TITLE = "Pull Request Title";
+	public static final String PULL_BODY = "Pull Request Description";
+
+	
 }

@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.rabobank.git.model.PRResponse;
 import com.rabobank.git.model.ReposResponse;
 
 /**
@@ -26,6 +27,13 @@ public class GitClientImpl {
 		logger.info("Username in Server Impl Layer : ",username);
 		List<ReposResponse> reposList = gitClient.fetchAllPublicRepos(username);
 		return reposList;
+	}
+	
+	
+	public List<PRResponse> pullRequestDetailsForRepo(String username,String repoName) {
+		logger.info("Username/RepoName in Server Impl Layer : ",username + " / " +repoName);
+		List<PRResponse> pullResponse = gitClient.pullRequestDetailsForRepo(username,repoName);
+		return pullResponse;
 	}
 
 

@@ -7,6 +7,6 @@ package com.rabobank.git.constant;
  */
 public class MappingConstant {
 	
-	public static final String REPOS_ENTRY_PATH = "/repos";
+	public static final String ENTRY = "/repos";
 
 }
