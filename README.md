@@ -31,8 +31,8 @@ $ mvn spring-boot:run
 
 
 ### API documentation
-Deployed in PCF
-[PCF Url]()
+PCF - 
+[https://rabobank-github-io.cfapps.io/swagger-ui.html](https://rabobank-github-io.cfapps.io/swagger-ui.html)
 
 After running the project on dev environment and browse
 [http://localhost:9191/swagger-ui.html](http://localhost:9191/swagger-ui.html)
