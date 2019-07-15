@@ -46,9 +46,9 @@ public class RepoGitContoller {
 		List<ReposResponse> reposResponses = gitClient.fetchAllPublicRepos(username);
 		if(reposResponses.isEmpty()) {
 			logger.error("No Repos Found for the given User.  : ", username);
-			ErrorMessage apiCustomMessage = new ErrorMessage(HttpStatus.NO_CONTENT,
+			ErrorMessage apiCustomMessage = new ErrorMessage(HttpStatus.NOT_FOUND,
 					"No Repos Found for the given User.  : " + username);
-			return new ResponseEntity<ErrorMessage>(apiCustomMessage, HttpStatus.NO_CONTENT);
+			return new ResponseEntity<ErrorMessage>(apiCustomMessage, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<List<ReposResponse>>(reposResponses, HttpStatus.OK);
 	}
@@ -57,13 +57,14 @@ public class RepoGitContoller {
 	@ApiOperation(value = APIConstant.PULL_DETAIL_DESC, httpMethod = APIConstant.API_GET,response = PRResponse.class)
 	@RequestMapping(value = "/pulls/{username}/{reponame}", method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> pullRequestForRepo(@PathVariable("username") String username,@PathVariable("reponame") String reponame) {
-		logger.info("Given UserName/RepoName  : ", username +"/" +reponame);
+		//logger.info("Given UserName/RepoName  : ", username, "/", reponame);
+		logger.info("Given UserName/RepoName  : "+ username+"/"+reponame);
 		List<PRResponse> reposResponses = gitClient.pullRequestDetailsForRepo(username, reponame);
 		if(reposResponses.isEmpty()) {
-			logger.error("No Pull Requests Found for  : ",  username +"/" +reponame);
-			ErrorMessage apiCustomMessage = new ErrorMessage(HttpStatus.NO_CONTENT,
+			logger.error("No Pull Requests Found for  : " + username+"/"+reponame);
+			ErrorMessage apiCustomMessage = new ErrorMessage(HttpStatus.NOT_FOUND,
 					"No Pull Requests Found for : " + username +"/" +reponame);
-			return new ResponseEntity<ErrorMessage>(apiCustomMessage, HttpStatus.NO_CONTENT);
+			return new ResponseEntity<ErrorMessage>(apiCustomMessage, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<List<PRResponse>>(reposResponses, HttpStatus.OK);
 	}
