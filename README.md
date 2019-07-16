@@ -1,4 +1,4 @@
-# Rabo Bank - Git API Invoker
+# Rabobank - Git API Invoker
 
 
 ## About the Application
