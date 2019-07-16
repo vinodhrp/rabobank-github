@@ -1,4 +1,4 @@
-package com.rabobank.git.service;
+package com.rabobank.git.repository;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import com.rabobank.git.model.ReposResponse;
  *
  */
 @FeignClient(name = "git-client-api", url = "${github.api.url}")
-public interface IGitService {
+public interface IGitRepository {
 
 	/**
 	 * Git API - fetch all the repos for the given username.
