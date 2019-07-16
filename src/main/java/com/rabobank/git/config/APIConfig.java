@@ -17,6 +17,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * 
+ * Provides Information and Technical Specs for the Rest Controllers(APIs) created.
+ * Easy to understand the APIs and for integration purpose.
+ * 
  * @author vinodhr
  *
  */
@@ -26,6 +29,7 @@ public class APIConfig {
 
 	/**
 	 * Creating Instance of Docket for generation of APIs document
+	 * 
 	 * @return Docket
 	 */
 	@Bean
@@ -37,13 +41,14 @@ public class APIConfig {
 				.build()
 				.apiInfo(createApiInfo());
 	}
-	
+
 	/**
 	 * Generates the Basic Information of API Creator
+	 * 
 	 * @return ApiInfo
 	 */
 	private ApiInfo createApiInfo() {
-	    return new ApiInfo(
+		return new ApiInfo(
 	    		APIConstant.API_TITLE,
 	            APIConstant.API_DESC,
 	            APIConstant.VERSION,
@@ -56,5 +61,5 @@ public class APIConfig {
 	            Collections.emptyList()
 	    );
 	}
-	
+
 }

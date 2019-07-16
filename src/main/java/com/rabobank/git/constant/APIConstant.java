@@ -2,6 +2,8 @@ package com.rabobank.git.constant;
 
 /**
  * 
+ * Constants used for API documentation
+ * 
  * @author vinodhr
  *
  */
@@ -30,13 +32,14 @@ public class APIConstant {
 	public static final String REPO_PATH = "Repository Path";
 	public static final String REPO_DESC = "Repository Description";
 	public static final String REPO_URL = "Repository URL";
-	
-	
+
 	public static final String PULL_ID = "Pull Request ID";
 	public static final String PULL_NUMBER = "Pull Request Number";
 	public static final String PULL_STATUS = "Pull Request Status";
 	public static final String PULL_TITLE = "Pull Request Title";
 	public static final String PULL_BODY = "Pull Request Description";
-
 	
+	public static final String MSG = "Information";
+	public static final String DOC_URL = "Documentation URL";
+
 }

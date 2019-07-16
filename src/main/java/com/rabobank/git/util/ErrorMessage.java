@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
+ * Handle the custom messages in case of any success or error occurred
  * 
  * @author vinodhr
  *
